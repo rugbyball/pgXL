@@ -1,20 +1,20 @@
 postgres-xl-9.5r1.1\src\backend\pgxc\pool\execRemote.c
 
 line 2783
->> /* Start transaction on connections where it is not started */
+<pre>/* Start transaction on connections where it is not started */
 	if (pgxc_node_begin(conn_count, connections, gxid, need_tran_block, false, PGXC_NODE_DATANODE))
 	{
 		ereport(ERROR,
 				(errcode(ERRCODE_INTERNAL_ERROR),
 				 errmsg("Could not begin transaction on data nodes.")));
 	}
-
+</pre>
 
 
 
 
 err_msg:
-  >> 16/06/14 15:40:17 INFO manager.SqlManager: Using default fetchSize of 1000
+<pre>16/06/14 15:40:17 INFO manager.SqlManager: Using default fetchSize of 1000
 16/06/14 15:40:18 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM "pgbench_accounts" AS t LIMIT 1
 16/06/14 15:40:18 ERROR manager.SqlManager: Error executing statement: org.postgresql.util.PSQLException: ERROR: Could not begin transaction on data node.
 org.postgresql.util.PSQLException: ERROR: Could not begin transaction on data node.
@@ -38,7 +38,7 @@ org.postgresql.util.PSQLException: ERROR: Could not begin transaction on data no
         at org.apache.sqoop.Sqoop.runTool(Sqoop.java:218)
         at org.apache.sqoop.Sqoop.runTool(Sqoop.java:227)
         at org.apache.sqoop.Sqoop.main(Sqoop.java:236)
-
+</pre>
 
 
 
